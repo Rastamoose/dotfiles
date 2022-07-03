@@ -1,0 +1,8 @@
+#!/bin/bash
+#toggleMute
+
+# Toggle mute using pavu
+pactl -- set-sink-mute @DEFAULT_SINK@ 'toggle'
+
+#Calls volume indicator to show volume status as notification
+dunst_volIndicator

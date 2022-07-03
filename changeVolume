@@ -1,0 +1,12 @@
+#!/bin/bash
+# changeVolume
+
+# Arbitrary but unique message tag
+msgTag="myvolume"
+
+# Unmute and Change the volume using pavu - takes in percentage argument and discards errors
+pactl -- set-sink-mute @DEFAULT_SINK@ 0
+pactl -- set-sink-volume 0 "$@" > /dev/null
+
+# Calls volume indicator to show volume status as notification
+dunst_volIndicator

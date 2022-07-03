@@ -1,0 +1,8 @@
+#!/bin/bash
+#dunst_kbLayoutIndicator
+
+# Get current keyboard layout
+layout="$(xkblayout-state print %n)"
+
+# Set dunst notification
+dunstify -a "changeLanguage" "Keyboard layout changed" "$layout" -r 23875
